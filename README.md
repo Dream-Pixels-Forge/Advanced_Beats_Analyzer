@@ -130,7 +130,7 @@ Created by Dimona Patrick
 Version 2.1
 
 ## License
-This addon is released under the GNU License.
+This addon is released under the GPL-3 License.
 
 ---
 
