@@ -2,6 +2,7 @@
 
 ## Overview
 Advanced Beat Analyzer is a powerful Blender addon designed specifically for motion designers and video editors. It provides professional-grade audio analysis and visualization tools, making it easier to create audio-reactive animations and synchronize visual elements with music.
+
 ![Screenshot 2025-03-01 004216](https://github.com/user-attachments/assets/0859985c-54d2-424b-a64f-42ef43c01a0b)
 
 ## Key Features
