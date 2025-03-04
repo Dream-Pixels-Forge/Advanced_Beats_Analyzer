@@ -49,6 +49,9 @@ Advanced Beat Analyzer is a powerful Blender addon designed specifically for mot
 6. Adjust smoothing settings if needed
 7. Use the generated animations in your nodes
 
+## Youtube Exemples
+https://youtu.be/N5Qw3c2WVOU?si=AMfLOAKN5X2Lapvz
+
 ## Features in Detail
 
 ### Beat Analysis
