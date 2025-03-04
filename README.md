@@ -5,16 +5,18 @@
 ## Overview
 Advanced Beat Analyzer is a powerful Blender addon designed specifically for motion designers and video editors. It provides professional-grade audio analysis and visualization tools, making it easier to create audio-reactive animations and synchronize visual elements with music.
 
-![Screenshot 2025-03-01 004216](https://github.com/user-attachments/assets/0859985c-54d2-424b-a64f-42ef43c01a0b)
+![Screenshot 2025-03-04 011009](https://github.com/user-attachments/assets/b435c449-8d65-416d-8e1b-78c7e63c2213)
+
 
 ## Key Features
-- 🎵 Advanced beat detection with multiple analysis methods
+- 🎵 Two dedicated audio value nodes:
+  - AVS (Audio Value Shader) for material animations
+  - AVG (Audio Value Geometry) for geometry nodes
 - 🎨 Audio-reactive animations for both Shader and Geometry Nodes
-- 🎬 Automatic timeline markers for beats
-- 📹 Camera switching based on beats
-- 🎭 Multiple frequency band analysis (Bass, Mid, High)
-- 🔄 Real-time audio visualization
-- ⚡ Multi-threaded analysis for better performance
+- 🎬 Real-time audio visualization
+- 🎭 Independent control over shader and geometry animations
+- ⚡ Optimized audio baking system
+- 🔧 Customizable smoothing and limits
 
 ## Perfect for
 - Motion Designers
@@ -23,6 +25,7 @@ Advanced Beat Analyzer is a powerful Blender addon designed specifically for mot
 - Music Video Creators
 - Live Visual Artists
 - Anyone working with audio-driven animations
+  
 ![Screenshot 2025-03-01 004133](https://github.com/user-attachments/assets/2d7117a8-becc-444f-8de6-68b5a58f2a76)
 ![Screenshot 2025-03-01 005452](https://github.com/user-attachments/assets/723758ed-f2c9-4dec-807e-94ab0dc53b2b)
 
@@ -40,7 +43,11 @@ Advanced Beat Analyzer is a powerful Blender addon designed specifically for mot
    - Frequency bands
    - Sensitivity
 4. Click "Analyze Audio"
-5. Use the generated markers and tools for your animation
+5. Choose your target:
+   - Click "Bake to AVS" for material animations
+   - Click "Bake to AVG" for geometry animations
+6. Adjust smoothing settings if needed
+7. Use the generated animations in your nodes
 
 ## Features in Detail
 
