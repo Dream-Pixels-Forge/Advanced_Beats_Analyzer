@@ -51,6 +51,7 @@ Advanced Beat Analyzer is a powerful Blender addon designed specifically for mot
 7. Use the generated animations in your nodes
 
 ## Youtube Exemples
+https://www.youtube.com/watch?v=QTTjQioLz_w
 https://youtu.be/N5Qw3c2WVOU?si=AMfLOAKN5X2Lapvz
 
 ## Features in Detail
@@ -136,6 +137,7 @@ https://youtu.be/N5Qw3c2WVOU?si=AMfLOAKN5X2Lapvz
 - If beats are missed, adjust sensitivity
 - If markers are cluttered, use visibility options
 - If performance issues, disable real-time preview
+- If your geometry desappear, check groupin and groupout type are geometry or create on by your self
 
 ## Updates and Support
 - Check for updates regularly
