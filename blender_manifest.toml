@@ -1,0 +1,31 @@
+schema_version = "1.0.0"
+
+id = "advanced_beat_analyzer"
+version = "2.2.0"
+name = "Advanced Beat Analyzer"
+tagline = "Analyze audio files for beats and create animation markers with advanced visualization options"
+maintainer = "Dimona Patrick <dream.pixels.forge@gmail.com>"
+type = "add-on"
+
+website = "https://github.com/Dream-Pixels-Forge"
+
+tags = [
+    "Animation",
+    "Audio",
+    "Import",
+    "Node",
+    "Render",
+    "System"
+]
+
+blender_version_min = "4.2.0"
+
+license = [
+    "SPDX:GPL-3.0-or-later",
+]
+copyright = [
+    "2025 Dimona Patrick",
+]
+
+[permissions]
+files = "Read audio files and export analysis data"
