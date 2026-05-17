@@ -41,6 +41,9 @@ from .operators.drivers import (
     register_driver_namespace,
     unregister_driver_namespace,
 )
+from .operators.compositor import (
+    BEATANALYZER_OT_add_compositor_effect,
+)
 from .ui.panels import BEATANALYZER_PT_main_panel
 
 
@@ -64,6 +67,7 @@ _classes: tuple = (
     BEATANALYZER_OT_generate_amplitude_curve,
     BEATANALYZER_OT_add_audio_driver,
     BEATANALYZER_OT_remove_audio_drivers,
+    BEATANALYZER_OT_add_compositor_effect,
     BEATANALYZER_PT_main_panel,
 )
 

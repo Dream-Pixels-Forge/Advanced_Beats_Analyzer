@@ -103,6 +103,11 @@ class BEATANALYZER_PT_main_panel(Panel):
         box.operator("beatanalyzer.add_audio_driver", icon='ADD')
         box.operator("beatanalyzer.remove_audio_drivers", icon='X')
 
+        # ── Compositor Effects ──────────────────────────────────────────
+        box = layout.box()
+        box.label(text="Compositor Effects", icon='NODE_COMPOSITING')
+        box.operator("beatanalyzer.add_compositor_effect", icon='SHADERFX')
+
         # ── Results ─────────────────────────────────────────────────────
         if props.total_beats > 0:
             box = layout.box()
