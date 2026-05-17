@@ -71,6 +71,10 @@ from .operators.index_switch import (
 from .operators.light_path import (
     BEATANALYZER_OT_setup_light_path_audio,
 )
+from .operators.bundle_sync import (
+    BEATANALYZER_OT_setup_audio_conductor,
+    BEATANALYZER_OT_setup_audio_listener,
+)
 from .ui.panels import BEATANALYZER_PT_main_panel
 
 
@@ -105,6 +109,8 @@ _classes: tuple = (
     BEATANALYZER_OT_setup_mask_sdf,
     BEATANALYZER_OT_setup_index_switch,
     BEATANALYZER_OT_setup_light_path_audio,
+    BEATANALYZER_OT_setup_audio_conductor,
+    BEATANALYZER_OT_setup_audio_listener,
     BEATANALYZER_PT_main_panel,
 )
 

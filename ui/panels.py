@@ -151,6 +151,12 @@ class BEATANALYZER_PT_main_panel(Panel):
         box.label(text="Lighting Atmosphere", icon='LIGHT')
         box.operator("beatanalyzer.setup_light_path_audio", icon='OUTLINER_OB_LIGHT')
 
+        # ── Bundle Cross-Object Sync ────────────────────────────────────
+        box = layout.box()
+        box.label(text="Cross-Object Sync", icon='LINKED')
+        box.operator("beatanalyzer.setup_audio_conductor", icon='OUTLINER_OB_SPEAKER')
+        box.operator("beatanalyzer.setup_audio_listener", icon='OUTLINER_OB_MESH')
+
         # ── Results ─────────────────────────────────────────────────────
         if props.total_beats > 0:
             box = layout.box()
