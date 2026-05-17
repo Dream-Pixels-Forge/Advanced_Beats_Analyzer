@@ -57,6 +57,11 @@ from .operators.transitions import (
 from .operators.raycast_npr import (
     BEATANALYZER_OT_setup_raycast_npr,
 )
+from .operators.realtime_preview import (
+    BEATANALYZER_OT_enable_realtime_preview,
+    BEATANALYZER_OT_disable_realtime_preview,
+    cleanup_handler as _cleanup_preview_handler,
+)
 from .ui.panels import BEATANALYZER_PT_main_panel
 
 
@@ -86,6 +91,8 @@ _classes: tuple = (
     BEATANALYZER_OT_setup_bone_info_geonodes,
     BEATANALYZER_OT_beat_synced_transitions,
     BEATANALYZER_OT_setup_raycast_npr,
+    BEATANALYZER_OT_enable_realtime_preview,
+    BEATANALYZER_OT_disable_realtime_preview,
     BEATANALYZER_PT_main_panel,
 )
 
@@ -105,6 +112,7 @@ def register() -> None:
 
 def unregister() -> None:
     """Unregister all addon classes and remove scene properties."""
+    _cleanup_preview_handler()
     unregister_driver_namespace()
 
     del bpy.types.Scene.beat_analyzer_props

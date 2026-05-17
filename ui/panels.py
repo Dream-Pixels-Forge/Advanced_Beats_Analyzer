@@ -129,6 +129,13 @@ class BEATANALYZER_PT_main_panel(Panel):
         box.label(text="NPR Shader Effects", icon='MATSHADERBALL')
         box.operator("beatanalyzer.setup_raycast_npr", icon='LIGHT_SUN')
 
+        # ── Real-Time Preview ───────────────────────────────────────────
+        box = layout.box()
+        box.label(text="Real-Time Preview", icon='PLAY')
+        row = box.row(align=True)
+        row.operator("beatanalyzer.enable_realtime_preview", icon='RESTRICT_VIEW_OFF')
+        row.operator("beatanalyzer.disable_realtime_preview", icon='PAUSE')
+
         # ── Results ─────────────────────────────────────────────────────
         if props.total_beats > 0:
             box = layout.box()
