@@ -29,6 +29,11 @@ from .operators.audio import (
     BEATANALYZER_OT_toggle_mute,
     BEATANALYZER_OT_export,
 )
+from .operators.animation_layers import (
+    BEATANALYZER_OT_bake_to_nla_layer,
+    BEATANALYZER_OT_toggle_audio_layer,
+    BEATANALYZER_OT_remove_audio_layer,
+)
 from .ui.panels import BEATANALYZER_PT_main_panel
 
 
@@ -46,6 +51,9 @@ _classes: tuple = (
     BEATANALYZER_OT_clear_markers,
     BEATANALYZER_OT_toggle_mute,
     BEATANALYZER_OT_export,
+    BEATANALYZER_OT_bake_to_nla_layer,
+    BEATANALYZER_OT_toggle_audio_layer,
+    BEATANALYZER_OT_remove_audio_layer,
     BEATANALYZER_PT_main_panel,
 )
 

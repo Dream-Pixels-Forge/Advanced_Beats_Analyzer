@@ -88,6 +88,14 @@ class BEATANALYZER_PT_main_panel(Panel):
         row.operator("beatanalyzer.bake_to_shader", text="Bake to AVS", icon='SHADING_RENDERED')
         row.operator("beatanalyzer.bake_to_geometry", text="Bake to AVG", icon='GEOMETRY_NODES')
 
+        # ── Non-Destructive Audio Layer (NLA) ───────────────────────────
+        box = layout.box()
+        box.label(text="Animation Layers", icon='NLA')
+        box.operator("beatanalyzer.bake_to_nla_layer", icon='NLA_PUSHDOWN')
+        row = box.row(align=True)
+        row.operator("beatanalyzer.toggle_audio_layer", icon='HIDE_OFF')
+        row.operator("beatanalyzer.remove_audio_layer", icon='TRASH')
+
         # ── Results ─────────────────────────────────────────────────────
         if props.total_beats > 0:
             box = layout.box()
