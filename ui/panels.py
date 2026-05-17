@@ -119,6 +119,11 @@ class BEATANALYZER_PT_main_panel(Panel):
         box.operator("beatanalyzer.audio_bone_driver", icon='BONE_DATA')
         box.operator("beatanalyzer.setup_bone_info_geonodes", icon='MESH_DATA')
 
+        # ── Beat-Synced Transitions (VSE) ───────────────────────────────
+        box = layout.box()
+        box.label(text="VSE Transitions", icon='SEQ_SEQUENCER')
+        box.operator("beatanalyzer.beat_synced_transitions", icon='ARROW_LEFTRIGHT')
+
         # ── Results ─────────────────────────────────────────────────────
         if props.total_beats > 0:
             box = layout.box()
