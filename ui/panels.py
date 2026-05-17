@@ -141,6 +141,11 @@ class BEATANALYZER_PT_main_panel(Panel):
         box.label(text="SDF Typography", icon='FONT_DATA')
         box.operator("beatanalyzer.setup_mask_sdf", icon='SORTALPHA')
 
+        # ── Index Switch Effects ────────────────────────────────────────
+        box = layout.box()
+        box.label(text="Effect Switching", icon='NODE_SEL')
+        box.operator("beatanalyzer.setup_index_switch", icon='LINENUMBERS_ON')
+
         # ── Results ─────────────────────────────────────────────────────
         if props.total_beats > 0:
             box = layout.box()
