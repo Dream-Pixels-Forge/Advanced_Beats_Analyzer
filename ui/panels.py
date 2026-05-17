@@ -1,0 +1,105 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright (C) 2025 Dimona Patrick
+
+"""Main sidebar panel for the Beat Analyzer addon."""
+
+from bpy.types import Panel
+
+
+class BEATANALYZER_PT_main_panel(Panel):
+    """Advanced Beat Analyzer panel in the 3D View sidebar."""
+
+    bl_label = "Advanced Beat Analyzer"
+    bl_idname = "BEATANALYZER_PT_main_panel"
+    bl_space_type = 'VIEW_3D'
+    bl_region_type = 'UI'
+    bl_category = "Beat Analyzer"
+
+    def draw(self, context):
+        layout = self.layout
+        props = context.scene.beat_analyzer_props
+
+        # ── Audio Source ────────────────────────────────────────────────
+        box = layout.box()
+        box.label(text="Audio Source", icon='SOUND')
+        box.prop(props, "audio_file")
+        if props.audio_file:
+            icon = 'MUTE_IPO_OFF' if props.audio_muted else 'SPEAKER'
+            box.operator(
+                "beatanalyzer.toggle_mute",
+                text="Toggle Mute",
+                icon=icon,
+                depress=props.audio_muted,
+            )
+
+        # ── Analysis Settings ───────────────────────────────────────────
+        box = layout.box()
+        box.label(text="Analysis Settings", icon='SETTINGS')
+        box.prop(props, "detection_method")
+        box.prop(props, "frequency_bands")
+        if props.frequency_bands == 'CUSTOM':
+            box.prop(props, "custom_freq_low")
+            box.prop(props, "custom_freq_high")
+        box.prop(props, "sensitivity")
+
+        # ── Advanced ────────────────────────────────────────────────────
+        box = layout.box()
+        box.prop(props, "advanced_settings", icon='PREFERENCES')
+        if props.advanced_settings:
+            box.prop(props, "min_bpm")
+            box.prop(props, "max_bpm")
+            box.prop(props, "analysis_window")
+            box.prop(props, "noise_reduction")
+            box.prop(props, "beat_refinement")
+            box.prop(props, "use_threading")
+            box.prop(props, "use_cache")
+            box.prop(props, "debug_mode")
+            col = box.column()
+            col.prop(props, "strong_beat_threshold")
+            col.prop(props, "medium_beat_threshold")
+
+        # ── Analyze Button ──────────────────────────────────────────────
+        layout.operator("beatanalyzer.analyze", icon='PLAY')
+
+        # ── Markers ─────────────────────────────────────────────────────
+        box = layout.box()
+        box.label(text="Marker Settings", icon='MARKER')
+        box.prop(props, "marker_prefix")
+        col = box.column(align=True)
+        col.label(text="Show Beats:")
+        row = col.row(align=True)
+        row.prop(props, "show_strong_beats", toggle=True)
+        row.prop(props, "show_medium_beats", toggle=True)
+        row.prop(props, "show_weak_beats", toggle=True)
+        box.operator("beatanalyzer.update_marker_visibility", icon='FILE_REFRESH')
+
+        row = box.row(align=True)
+        row.operator("beatanalyzer.prev_marker", icon='PREV_KEYFRAME')
+        row.operator("beatanalyzer.next_marker", icon='NEXT_KEYFRAME')
+
+        if context.active_object and context.active_object.type == 'CAMERA':
+            box.operator("beatanalyzer.bind_camera", icon='CAMERA_DATA')
+
+        if context.scene.timeline_markers:
+            box.operator("beatanalyzer.clear_markers", icon='X')
+
+        # ── Audio Baking ────────────────────────────────────────────────
+        row = layout.row(align=True)
+        row.operator("beatanalyzer.bake_to_shader", text="Bake to AVS", icon='SHADING_RENDERED')
+        row.operator("beatanalyzer.bake_to_geometry", text="Bake to AVG", icon='GEOMETRY_NODES')
+
+        # ── Results ─────────────────────────────────────────────────────
+        if props.total_beats > 0:
+            box = layout.box()
+            box.label(text="Analysis Results", icon='INFO')
+            box.label(text=f"Total Beats: {props.total_beats}")
+            box.label(text=f"Average BPM: {props.average_bpm:.1f}")
+            box.label(text=f"Duration: {props.audio_duration:.2f}s")
+            box.label(text=f"Last Analysis: {props.last_analysis_time}")
+
+            if props.debug_mode and props.debug_info:
+                box.label(text="Debug Info:", icon='CONSOLE')
+                for line in props.debug_info.split('\n'):
+                    box.label(text=line)
+
+            box.operator("beatanalyzer.export", icon='EXPORT')

@@ -1,31 +1,29 @@
 schema_version = "1.0.0"
 
 id = "advanced_beat_analyzer"
-version = "2.2.0"
+version = "3.0.0"
 name = "Advanced Beat Analyzer"
-tagline = "Analyze audio files for beats and create animation markers with advanced visualization options"
+tagline = "Professional audio beat detection and audio-reactive animation tools"
 maintainer = "Dimona Patrick <dream.pixels.forge@gmail.com>"
 type = "add-on"
 
-website = "https://github.com/Dream-Pixels-Forge"
+website = "https://github.com/Dream-Pixels-Forge/Advanced_Beats_Analyzer"
 
 tags = [
     "Animation",
-    "Audio",
-    "Import",
     "Node",
-    "Render",
-    "System"
+    "Sequencer",
 ]
 
-blender_version_min = "4.2.0"
+blender_version_min = "5.1.0"
 
 license = [
     "SPDX:GPL-3.0-or-later",
 ]
+
 copyright = [
-    "2025 Dimona Patrick",
+    "2025-2026 Dimona Patrick",
 ]
 
 [permissions]
-files = "Read audio files and export analysis data"
+files = "Read WAV audio files and export JSON analysis data"
