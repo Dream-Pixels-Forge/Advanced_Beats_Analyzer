@@ -62,6 +62,9 @@ from .operators.realtime_preview import (
     BEATANALYZER_OT_disable_realtime_preview,
     cleanup_handler as _cleanup_preview_handler,
 )
+from .operators.mask_sdf import (
+    BEATANALYZER_OT_setup_mask_sdf,
+)
 from .ui.panels import BEATANALYZER_PT_main_panel
 
 
@@ -93,6 +96,7 @@ _classes: tuple = (
     BEATANALYZER_OT_setup_raycast_npr,
     BEATANALYZER_OT_enable_realtime_preview,
     BEATANALYZER_OT_disable_realtime_preview,
+    BEATANALYZER_OT_setup_mask_sdf,
     BEATANALYZER_PT_main_panel,
 )
 

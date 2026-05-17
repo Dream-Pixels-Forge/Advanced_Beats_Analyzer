@@ -136,6 +136,11 @@ class BEATANALYZER_PT_main_panel(Panel):
         row.operator("beatanalyzer.enable_realtime_preview", icon='RESTRICT_VIEW_OFF')
         row.operator("beatanalyzer.disable_realtime_preview", icon='PAUSE')
 
+        # ── SDF Typography ──────────────────────────────────────────────
+        box = layout.box()
+        box.label(text="SDF Typography", icon='FONT_DATA')
+        box.operator("beatanalyzer.setup_mask_sdf", icon='SORTALPHA')
+
         # ── Results ─────────────────────────────────────────────────────
         if props.total_beats > 0:
             box = layout.box()
