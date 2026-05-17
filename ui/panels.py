@@ -124,6 +124,11 @@ class BEATANALYZER_PT_main_panel(Panel):
         box.label(text="VSE Transitions", icon='SEQ_SEQUENCER')
         box.operator("beatanalyzer.beat_synced_transitions", icon='ARROW_LEFTRIGHT')
 
+        # ── Raycast NPR Effects ─────────────────────────────────────────
+        box = layout.box()
+        box.label(text="NPR Shader Effects", icon='MATSHADERBALL')
+        box.operator("beatanalyzer.setup_raycast_npr", icon='LIGHT_SUN')
+
         # ── Results ─────────────────────────────────────────────────────
         if props.total_beats > 0:
             box = layout.box()

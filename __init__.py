@@ -54,6 +54,9 @@ from .operators.armature import (
 from .operators.transitions import (
     BEATANALYZER_OT_beat_synced_transitions,
 )
+from .operators.raycast_npr import (
+    BEATANALYZER_OT_setup_raycast_npr,
+)
 from .ui.panels import BEATANALYZER_PT_main_panel
 
 
@@ -82,6 +85,7 @@ _classes: tuple = (
     BEATANALYZER_OT_audio_bone_driver,
     BEATANALYZER_OT_setup_bone_info_geonodes,
     BEATANALYZER_OT_beat_synced_transitions,
+    BEATANALYZER_OT_setup_raycast_npr,
     BEATANALYZER_PT_main_panel,
 )
 
