@@ -108,6 +108,11 @@ class BEATANALYZER_PT_main_panel(Panel):
         box.label(text="Compositor Effects", icon='NODE_COMPOSITING')
         box.operator("beatanalyzer.add_compositor_effect", icon='SHADERFX')
 
+        # ── Volume Effects ──────────────────────────────────────────────
+        box = layout.box()
+        box.label(text="Volume Effects", icon='VOLUME_DATA')
+        box.operator("beatanalyzer.setup_audio_volume", icon='MOD_FLUID')
+
         # ── Results ─────────────────────────────────────────────────────
         if props.total_beats > 0:
             box = layout.box()
