@@ -96,6 +96,13 @@ class BEATANALYZER_PT_main_panel(Panel):
         row.operator("beatanalyzer.toggle_audio_layer", icon='HIDE_OFF')
         row.operator("beatanalyzer.remove_audio_layer", icon='TRASH')
 
+        # ── Driver Expressions ──────────────────────────────────────────
+        box = layout.box()
+        box.label(text="Audio Drivers", icon='DRIVER')
+        box.operator("beatanalyzer.generate_amplitude_curve", icon='FCURVE')
+        box.operator("beatanalyzer.add_audio_driver", icon='ADD')
+        box.operator("beatanalyzer.remove_audio_drivers", icon='X')
+
         # ── Results ─────────────────────────────────────────────────────
         if props.total_beats > 0:
             box = layout.box()

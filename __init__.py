@@ -34,6 +34,13 @@ from .operators.animation_layers import (
     BEATANALYZER_OT_toggle_audio_layer,
     BEATANALYZER_OT_remove_audio_layer,
 )
+from .operators.drivers import (
+    BEATANALYZER_OT_generate_amplitude_curve,
+    BEATANALYZER_OT_add_audio_driver,
+    BEATANALYZER_OT_remove_audio_drivers,
+    register_driver_namespace,
+    unregister_driver_namespace,
+)
 from .ui.panels import BEATANALYZER_PT_main_panel
 
 
@@ -54,6 +61,9 @@ _classes: tuple = (
     BEATANALYZER_OT_bake_to_nla_layer,
     BEATANALYZER_OT_toggle_audio_layer,
     BEATANALYZER_OT_remove_audio_layer,
+    BEATANALYZER_OT_generate_amplitude_curve,
+    BEATANALYZER_OT_add_audio_driver,
+    BEATANALYZER_OT_remove_audio_drivers,
     BEATANALYZER_PT_main_panel,
 )
 
@@ -67,9 +77,14 @@ def register() -> None:
         type=BeatAnalyzerProperties
     )
 
+    # Register driver namespace function
+    register_driver_namespace()
+
 
 def unregister() -> None:
     """Unregister all addon classes and remove scene properties."""
+    unregister_driver_namespace()
+
     del bpy.types.Scene.beat_analyzer_props
 
     for cls in reversed(_classes):
