@@ -113,6 +113,12 @@ class BEATANALYZER_PT_main_panel(Panel):
         box.label(text="Volume Effects", icon='VOLUME_DATA')
         box.operator("beatanalyzer.setup_audio_volume", icon='MOD_FLUID')
 
+        # ── Armature / Bone Audio ───────────────────────────────────────
+        box = layout.box()
+        box.label(text="Armature Audio", icon='ARMATURE_DATA')
+        box.operator("beatanalyzer.audio_bone_driver", icon='BONE_DATA')
+        box.operator("beatanalyzer.setup_bone_info_geonodes", icon='MESH_DATA')
+
         # ── Results ─────────────────────────────────────────────────────
         if props.total_beats > 0:
             box = layout.box()

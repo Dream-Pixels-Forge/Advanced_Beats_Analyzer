@@ -47,6 +47,10 @@ from .operators.compositor import (
 from .operators.volumes import (
     BEATANALYZER_OT_setup_audio_volume,
 )
+from .operators.armature import (
+    BEATANALYZER_OT_audio_bone_driver,
+    BEATANALYZER_OT_setup_bone_info_geonodes,
+)
 from .ui.panels import BEATANALYZER_PT_main_panel
 
 
@@ -72,6 +76,8 @@ _classes: tuple = (
     BEATANALYZER_OT_remove_audio_drivers,
     BEATANALYZER_OT_add_compositor_effect,
     BEATANALYZER_OT_setup_audio_volume,
+    BEATANALYZER_OT_audio_bone_driver,
+    BEATANALYZER_OT_setup_bone_info_geonodes,
     BEATANALYZER_PT_main_panel,
 )
 
