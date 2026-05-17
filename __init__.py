@@ -68,6 +68,9 @@ from .operators.mask_sdf import (
 from .operators.index_switch import (
     BEATANALYZER_OT_setup_index_switch,
 )
+from .operators.light_path import (
+    BEATANALYZER_OT_setup_light_path_audio,
+)
 from .ui.panels import BEATANALYZER_PT_main_panel
 
 
@@ -101,6 +104,7 @@ _classes: tuple = (
     BEATANALYZER_OT_disable_realtime_preview,
     BEATANALYZER_OT_setup_mask_sdf,
     BEATANALYZER_OT_setup_index_switch,
+    BEATANALYZER_OT_setup_light_path_audio,
     BEATANALYZER_PT_main_panel,
 )
 

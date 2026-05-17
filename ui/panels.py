@@ -146,6 +146,11 @@ class BEATANALYZER_PT_main_panel(Panel):
         box.label(text="Effect Switching", icon='NODE_SEL')
         box.operator("beatanalyzer.setup_index_switch", icon='LINENUMBERS_ON')
 
+        # ── Light Path Audio Atmosphere ─────────────────────────────────
+        box = layout.box()
+        box.label(text="Lighting Atmosphere", icon='LIGHT')
+        box.operator("beatanalyzer.setup_light_path_audio", icon='OUTLINER_OB_LIGHT')
+
         # ── Results ─────────────────────────────────────────────────────
         if props.total_beats > 0:
             box = layout.box()
