@@ -19,7 +19,7 @@ class BeatAnalyzerProperties(PropertyGroup):
     # ── Audio File ──────────────────────────────────────────────────────
     audio_file: StringProperty(
         name="Audio File",
-        description="Path to the WAV audio file to analyze",
+        description="Path to the audio file (WAV, MP3, FLAC, OGG supported)",
         default="",
         subtype='FILE_PATH',
     )

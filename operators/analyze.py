@@ -46,7 +46,7 @@ class BEATANALYZER_OT_analyze(Operator):
 
     bl_idname = "beatanalyzer.analyze"
     bl_label = "Analyze Audio"
-    bl_description = "Run beat detection on the selected WAV file"
+    bl_description = "Run beat detection on the selected audio file (WAV, MP3, FLAC, OGG)"
     bl_options = {'REGISTER', 'UNDO'}
 
     _timer = None

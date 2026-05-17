@@ -9,11 +9,12 @@ tested independently of Blender by passing a simple settings namespace.
 
 from __future__ import annotations
 
-import wave
 from dataclasses import dataclass, field
 from typing import Callable
 
 import numpy as np
+
+from .audio_loader import AudioData, load_audio
 
 
 @dataclass
@@ -62,8 +63,12 @@ class AudioAnalyzer:
     def analyze_file(
         self, file_path: str, progress_callback: ProgressCallback = None
     ) -> AnalysisResult:
-        """Run full analysis on a WAV file and return results."""
-        data = self._load_audio(file_path)
+        """Run full analysis on an audio file (any supported format) and return results."""
+        audio = load_audio(file_path)
+        self._sample_rate = audio.sample_rate
+        self._channels = audio.channels
+        data = audio.samples
+
         data = self._apply_frequency_filter(data)
 
         if self._s.noise_reduction > 0:
@@ -93,19 +98,7 @@ class AudioAnalyzer:
             bpm=bpm,
         )
 
-    # ── I/O ─────────────────────────────────────────────────────────────
-
-    def _load_audio(self, file_path: str) -> np.ndarray:
-        with wave.open(file_path, "rb") as wf:
-            self._sample_rate = wf.getframerate()
-            self._channels = wf.getnchannels()
-            n_frames = wf.getnframes()
-            raw = wf.readframes(n_frames)
-
-        data = np.frombuffer(raw, dtype=np.int16)
-        if self._channels == 2:
-            data = data.reshape(-1, 2).mean(axis=1)
-        return data / np.iinfo(np.int16).max
+    # ── I/O (removed - now uses audio_loader module) ────────────────────
 
     # ── Frequency Filtering ─────────────────────────────────────────────
 
