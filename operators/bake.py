@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Copyright (C) 2025 Dimona Patrick
 
-"""Operators for baking audio to shader (AVS) and geometry (AVG) value nodes."""
+"""Operators for baking Audio Values to Shader (AVS) and Audio Value to Geometry (AVG) nodes."""
 
 from __future__ import annotations
 
@@ -35,7 +35,7 @@ def _bake_sound_to_fcurve(context, area, filepath: str) -> None:
 # ── Shader Bake ─────────────────────────────────────────────────────────────
 
 class BEATANALYZER_OT_bake_to_shader(Operator):
-    """Bake audio amplitude to an Audio Value Shader (AVS) node."""
+    """Bake audio amplitude to an Audio Values to Shader (AVS) node."""
 
     bl_idname = "beatanalyzer.bake_to_shader"
     bl_label = "Bake to AVS"
@@ -92,13 +92,13 @@ class BEATANALYZER_OT_bake_to_shader(Operator):
     @staticmethod
     def _find_or_create_node(tree):
         for node in tree.nodes:
-            if node.type == 'VALUE' and node.label == "Audio Value Shader":
+            if node.type == 'VALUE' and node.label == "Audio Values to Shader":
                 return node
 
         # Create full node setup
         value = tree.nodes.new('ShaderNodeValue')
-        value.label = "Audio Value Shader"
-        value.name = "Audio Value Shader"
+        value.label = "Audio Values to Shader"
+        value.name = "Audio Values to Shader"
         value.location = (-600, 0)
 
         noise = tree.nodes.new('ShaderNodeTexNoise')
@@ -165,7 +165,7 @@ class BEATANALYZER_OT_bake_to_shader(Operator):
 # ── Geometry Bake ───────────────────────────────────────────────────────────
 
 class BEATANALYZER_OT_bake_to_geometry(Operator):
-    """Bake audio amplitude to an Audio Value Geometry (AVG) node."""
+    """Bake audio amplitude to an Audio Value to Geometry (AVG) node."""
 
     bl_idname = "beatanalyzer.bake_to_geometry"
     bl_label = "Bake to AVG"
@@ -238,7 +238,7 @@ class BEATANALYZER_OT_bake_to_geometry(Operator):
     @staticmethod
     def _find_or_create_node(tree):
         for node in tree.nodes:
-            if node.type == 'VALUE' and node.label == "Audio Value Geometry":
+            if node.type == 'VALUE' and node.label == "Audio Value to Geometry":
                 return node
 
         # Ensure group I/O nodes
@@ -265,8 +265,8 @@ class BEATANALYZER_OT_bake_to_geometry(Operator):
                 tree.links.new(group_in.outputs['Geometry'], group_out.inputs['Geometry'])
 
         value = tree.nodes.new('ShaderNodeValue')
-        value.label = "Audio Value Geometry"
-        value.name = "Audio Value Geometry"
+        value.label = "Audio Value to Geometry"
+        value.name = "Audio Value to Geometry"
         value.location = (-400, -300)
 
         noise = tree.nodes.new('ShaderNodeTexNoise')

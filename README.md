@@ -22,7 +22,7 @@
 
 ## Why Advanced Beat Analyzer?
 
-Advanced Beat Analyzer turns audio analysis into a one-click workflow. Select a WAV file, hit **Analyze**, and instantly get timeline markers at every detected beat — categorized by strength. Then bake that audio energy directly into **Shader Nodes** (AVS) or **Geometry Nodes** (AVG) to drive any parameter in real time.
+Advanced Beat Analyzer turns audio analysis into a one-click workflow. Select a WAV file, hit **Analyze**, and instantly get timeline markers at every detected beat — categorized by strength. Then bake that audio energy directly into **Shader Nodes** (AVS — Audio Values to Shader) or **Geometry Nodes** (AVG — Audio Value to Geometry) to drive any parameter in real time.
 
 | Use Case | How It Helps |
 |----------|-------------|
@@ -51,8 +51,8 @@ Advanced Beat Analyzer turns audio analysis into a one-click workflow. Select a 
 
 ### Audio Baking
 
-- **Bake to AVS** — Creates a Value node in the Shader Editor driven by audio amplitude, connected to a Noise Texture → Color Ramp → Principled BSDF emission pipeline.
-- **Bake to AVG** — Creates a Value node inside a Geometry Nodes modifier, driving a 4D Noise Texture's W input for procedural audio-reactive geometry.
+- **Bake to AVS** (Audio Values to Shader) — Creates a Value node in the Shader Editor driven by audio amplitude, connected to a Noise Texture → Color Ramp → Principled BSDF emission pipeline.
+- **Bake to AVG** (Audio Value to Geometry) — Creates a Value node inside a Geometry Nodes modifier, driving a 4D Noise Texture's W input for procedural audio-reactive geometry.
 - Envelope and Limits modifiers auto-applied with configurable smoothing.
 
 ### Marker Management
@@ -97,8 +97,8 @@ Advanced Beat Analyzer turns audio analysis into a one-click workflow. Select a 
 3. Choose a detection method and frequency band
 4. Click **Analyze Audio** — markers appear on your timeline
 5. Select an object, then click:
-   - **Bake to AVS** to drive shader materials
-   - **Bake to AVG** to drive geometry nodes
+   - **Bake to AVS** (Audio Values to Shader) to drive shader materials
+   - **Bake to AVG** (Audio Value to Geometry) to drive geometry nodes
 6. Play the animation and watch your scene react to the music!
 
 ---
