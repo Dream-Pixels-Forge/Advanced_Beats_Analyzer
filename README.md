@@ -1,3 +1,7 @@
+
+
+<img width="1425" height="755" alt="Screenshot from 2026-05-18 01-28-52" src="https://github.com/user-attachments/assets/868ee9ad-ea68-406a-a73e-edbef5be7f57" />
+
 # Advanced Beat Analyzer for Blender
 
 <p align="center">
